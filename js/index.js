@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded',function(){
         }
     }
 
-
+    //导航及其对应板块移动函数
     function move(nowIndex){
         for (var j = 0; j < liANodes.length; j++) {
             liANodes[j].style.width = '';
@@ -46,8 +46,10 @@ window.addEventListener('DOMContentLoaded',function(){
         //让内容区ul运动
         contentMain.style.top = - nowIndex * content.offsetHeight + 'px';
     }
-
+    //鼠标滚动函数
+    var timer = null;
     function wheel(event){
+
         event = event || window.event;
         var flag = '';
         if(event.wheelDelta){
@@ -63,33 +65,38 @@ window.addEventListener('DOMContentLoaded',function(){
                 flag = 'down;'
             }
         }
-        switch(flag){
-            case 'up':
+        clearTimeout(timer);
+        timer = setTimeout(function(){
+            switch(flag){
+                case 'up':
                     if (nowIndex > 0) {
                         nowIndex--;
                         move(nowIndex);
                     }
-                break;
-            case 'down':
+                    break;
+                case 'down':
                     if (nowIndex < 4) {
                         nowIndex++;
                         move(nowIndex);
                     }
-                break;
-        }
-        document.onmousewheel = null;
-        document.removeEventListener('DOMMouseScroll',wheel);
-        contentMain.addEventListener('webkitTransitionEnd',function () {
-            scroll();
-            contentMain.removeEventListener('webkitTransitionEnd',scroll);
-        });
-        if(nowIndex === 0 || nowIndex === 4) scroll();
+                    break;
+            }
+        },50);
+
+  /*      document.onmousewheel = null;
+         document.removeEventListener('DOMMouseScroll',wheel);
+         contentMain.addEventListener('webkitTransitionEnd',function () {
+         scroll();
+         contentMain.removeEventListener('webkitTransitionEnd',scroll);
+         });
+         if(nowIndex === 0 || nowIndex === 4) scroll();*/
 
         //禁止浏览器默认行为
         event.preventDefault && event.preventDefault();
         return false;
     }
     scroll();
+    //滚动事件绑定函数
     function scroll(){
         document.onmousewheel = wheel;
         document.addEventListener('DOMMouseScroll',wheel);
