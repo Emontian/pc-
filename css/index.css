@@ -25,6 +25,13 @@ img{
     display: block;
     clear: both;
 }
+.title{
+    color:#009ee0;
+    font-size:80px;
+    line-height:0.8;
+    font-weight:bold;
+    letter-spacing:-5px;
+}
 #wrap{
     position: relative;
     width: 100%;
@@ -55,6 +62,9 @@ img{
     cursor: pointer;
     position: relative;
     color: #009EE0;
+}
+.nav li:first-child{
+    width: 18px;
 }
 .nav li a{
     color: #000;
@@ -96,15 +106,30 @@ img{
     width:100%;
     position: relative;
     height:20%;
-    background-color: gray;
     display: flex;
     justify-content:center;
     align-items: center;
+    background-repeat: no-repeat;
+}
+.content-main>li:nth-child(1){
+    background-image: url("../img/bg1.jpg");
+}
+.content-main>li:nth-child(2){
+    background-image: url("../img/bg2.jpg");
+}
+.content-main>li:nth-child(3){
+    background-image: url("../img/bg3.jpg");
+}
+.content-main>li:nth-child(4){
+    background-image: url("../img/bg4.jpg");
+}
+.content-main>li:nth-child(5){
+    background-image: url("../img/bg5.jpg");
 }
 .content-main section{
+    position: relative;
     width:1100px;
     height: 520px;
-    background-color: gold;
    /* position: absolute;
     !*top:0;
     left:0;
@@ -115,4 +140,92 @@ img{
     left:50%;
     margin-left: -550px;
     margin-top: -260px;*/
+}
+.home-banner{
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    width: 100%;
+    height:100%;
+    position: relative;
+}
+.home-banner li{
+    visibility: hidden;
+    width: 100%;
+    height:100%;
+    position:absolute;
+    top: 0;
+    left:0;
+    text-align: center;
+    color: white;
+    line-height: 520px;
+}
+.home-banner li.active{
+    visibility: visible;
+}
+.home-banner li:nth-child(1){
+    background:#dc6c5f;
+}
+.home-banner li:nth-child(2){
+    background:#95dc84;
+}
+.home-banner li:nth-child(3){
+    background:#64b9d2;
+}
+.home-banner li:nth-child(4){
+    background:#000000;
+}
+.home-point{
+    position: absolute;
+    bottom:0;
+    left:50%;
+    transform: translateX(-50%);
+}
+.home-point li{
+    width:20px;
+    height:20px;
+    background-color:rgba(255,255,255,0.5);
+    margin:2px;
+    box-shadow:0 0 4px rgba(25,25,25,0.8);
+    float: left;
+    border-radius:50%;
+    cursor: pointer;
+}
+.home-point li.active{
+    background-color:white;
+}
+.home-banner .right-show{
+    visibility: visible;
+    animation: rightShow 2s;
+}
+.home-banner .left-show{
+    visibility: visible;
+    animation: leftShow 2s;
+}
+@keyframes rightShow {
+    0%{visibility: hidden;transform: translateZ(-200px);}
+    50%{transform: translateX(40%)  scale(.8) rotateY(-30deg);}
+    100%{visibility: visible;}
+}
+@keyframes leftShow {
+    0%{visibility: hidden;transform: translateZ(-200px);}
+    50%{transform: translateX(-40%)  scale(.8) rotateY(30deg);}
+    100%{visibility: visible;}
+}
+.home-banner .left-hide{
+     visibility: hidden;
+     animation:leftHide 2s ;
+ }
+.home-banner .right-hide{
+    visibility: hidden;
+    animation:rightHide 2s ;
+}
+@keyframes leftHide {
+    0%{visibility: visible;}
+    50%{transform: translateX(-40%) scale(.8) rotateY(30deg);}
+    100%{visibility: hidden;transform: translateZ(-200px);}
+}
+@keyframes rightHide {
+    0%{visibility: visible;}
+    50%{transform: translateX(40%) scale(.8) rotateY(-30deg);}
+    100%{visibility: hidden;transform: translateZ(-200px);}
 }
