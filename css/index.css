@@ -1,231 +1,370 @@
-html,body{
+html, body {
     height: 100%;
     /*overflow:hidden;*/
 }
-html,body,h1,h2,h3,h4,h5,h6,p,ul,li{
+
+html, body, h1, h2, h3, h4, h5, h6, p, ul, li {
     margin: 0;
     padding: 0;
     font: 14px "微软雅黑";
 }
-a{
+
+a {
     text-decoration: none;
     display: block;
 }
-li{
+
+li {
     list-style: none;
 }
-img{
+
+img {
     display: block;
 }
-.clearfix{
+
+.clearfix {
     *zoom: 1;
 }
-.clearfix:after{
+
+.clearfix:after {
     content: "";
     display: block;
     clear: both;
 }
-.title{
-    color:#009ee0;
-    font-size:80px;
-    line-height:0.8;
-    font-weight:bold;
-    letter-spacing:-5px;
+
+.title {
+    color: #009ee0;
+    font-size: 80px;
+    line-height: 0.8;
+    font-weight: bold;
+    letter-spacing: -5px;
 }
-#wrap{
+
+.comment-text {
+    color: white;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+#wrap {
     position: relative;
     width: 100%;
     height: 100%;
 }
-#header{
-    width:100%;
+
+#header {
+    width: 100%;
     height: 80px;
 }
-.header-main{
+
+.header-main {
     position: relative;
     width: 1100px;
     height: 80px;
     background-color: aqua;
     margin: 0 auto;
 }
-.logo{
+
+.logo {
     float: left;
     margin-top: 15px;
 }
-.nav{
-    float:right;
-    margin-top:50px;
+
+.nav {
+    float: right;
+    margin-top: 50px;
 }
-.nav li{
+
+.nav li {
     margin-left: 40px;
     float: left;
     cursor: pointer;
     position: relative;
     color: #009EE0;
 }
-.nav li:first-child{
+
+.nav li:first-child {
     width: 18px;
 }
-.nav li a{
+
+.nav li a {
     color: #000;
     position: absolute;
-    top:0;
-    left:0;
-    width:0;
+    top: 0;
+    left: 0;
+    width: 0;
     overflow: hidden;
 
 }
+
 /*.nav li a:nth-child(2){
     width: 100%;
 }*/
-.nav li:hover a{
-    width:100%;
-    transition:width 0.5s;
+.nav li:hover a {
+    width: 100%;
+    transition: width 0.5s;
 }
-.arrow{
+
+.arrow {
     position: absolute;
-    left:0;
+    left: 0;
     bottom: -11px;
     z-index: 100;
 }
-#wrap .content{
+
+#wrap .content {
     width: 100%;
     position: absolute;
     top: 80px;
-    bottom:0;
+    bottom: 0;
     overflow: hidden;
 }
-.content .content-main{
-    width:100%;
+
+.content .content-main {
+    width: 100%;
     position: absolute;
-    top:0;
-    height:500%;
-    transition:top .5s;
+    top: 0;
+    height: 500%;
+    transition: top .5s;
 }
-.content-main>li{
-    width:100%;
+
+.content-main > li {
+    width: 100%;
     position: relative;
-    height:20%;
+    height: 20%;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     background-repeat: no-repeat;
 }
-.content-main>li:nth-child(1){
+
+.content-main > li:nth-child(1) {
     background-image: url("../img/bg1.jpg");
 }
-.content-main>li:nth-child(2){
+
+.content-main > li:nth-child(2) {
     background-image: url("../img/bg2.jpg");
 }
-.content-main>li:nth-child(3){
+
+.content-main > li:nth-child(3) {
     background-image: url("../img/bg3.jpg");
 }
-.content-main>li:nth-child(4){
+
+.content-main > li:nth-child(4) {
     background-image: url("../img/bg4.jpg");
 }
-.content-main>li:nth-child(5){
+
+.content-main > li:nth-child(5) {
     background-image: url("../img/bg5.jpg");
 }
-.content-main section{
+
+.content-main section {
     position: relative;
-    width:1100px;
+    width: 1100px;
     height: 520px;
-   /* position: absolute;
-    !*top:0;
-    left:0;
-    bottom:0;
-    right:0;
-    margin:auto;*!
-    top:50%;
-    left:50%;
-    margin-left: -550px;
-    margin-top: -260px;*/
+    /* position: absolute;
+     !*top:0;
+     left:0;
+     bottom:0;
+     right:0;
+     margin:auto;*!
+     top:50%;
+     left:50%;
+     margin-left: -550px;
+     margin-top: -260px;*/
 }
-.home-banner{
+
+.home-banner {
     transform-style: preserve-3d;
     perspective: 1000px;
     width: 100%;
-    height:100%;
+    height: 100%;
     position: relative;
 }
-.home-banner li{
+
+.home-banner li {
     visibility: hidden;
     width: 100%;
-    height:100%;
-    position:absolute;
+    height: 100%;
+    position: absolute;
     top: 0;
-    left:0;
+    left: 0;
     text-align: center;
     color: white;
     line-height: 520px;
 }
-.home-banner li.active{
+
+.home-banner li.active {
     visibility: visible;
 }
-.home-banner li:nth-child(1){
-    background:#dc6c5f;
+
+.home-banner li:nth-child(1) {
+    background: #dc6c5f;
 }
-.home-banner li:nth-child(2){
-    background:#95dc84;
+
+.home-banner li:nth-child(2) {
+    background: #95dc84;
 }
-.home-banner li:nth-child(3){
-    background:#64b9d2;
+
+.home-banner li:nth-child(3) {
+    background: #64b9d2;
 }
-.home-banner li:nth-child(4){
-    background:#000000;
+
+.home-banner li:nth-child(4) {
+    background: #000000;
 }
-.home-point{
+
+.home-point {
     position: absolute;
-    bottom:0;
-    left:50%;
+    bottom: 0;
+    left: 50%;
     transform: translateX(-50%);
 }
-.home-point li{
-    width:20px;
-    height:20px;
-    background-color:rgba(255,255,255,0.5);
-    margin:2px;
-    box-shadow:0 0 4px rgba(25,25,25,0.8);
+
+.home-point li {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 2px;
+    box-shadow: 0 0 4px rgba(25, 25, 25, 0.8);
     float: left;
-    border-radius:50%;
+    border-radius: 50%;
     cursor: pointer;
 }
-.home-point li.active{
-    background-color:white;
+
+.home-point li.active {
+    background-color: white;
 }
-.home-banner .right-show{
+
+.home-banner .right-show {
     visibility: visible;
     animation: rightShow 2s;
 }
-.home-banner .left-show{
+
+.home-banner .left-show {
     visibility: visible;
     animation: leftShow 2s;
 }
+
 @keyframes rightShow {
-    0%{visibility: hidden;transform: translateZ(-200px);}
-    50%{transform: translateX(40%)  scale(.8) rotateY(-30deg);}
-    100%{visibility: visible;}
+    0% {
+        visibility: hidden;
+        transform: translateZ(-200px);
+    }
+    50% {
+        transform: translateX(40%) scale(.8) rotateY(-30deg);
+    }
+    100% {
+        visibility: visible;
+    }
 }
+
 @keyframes leftShow {
-    0%{visibility: hidden;transform: translateZ(-200px);}
-    50%{transform: translateX(-40%)  scale(.8) rotateY(30deg);}
-    100%{visibility: visible;}
+    0% {
+        visibility: hidden;
+        transform: translateZ(-200px);
+    }
+    50% {
+        transform: translateX(-40%) scale(.8) rotateY(30deg);
+    }
+    100% {
+        visibility: visible;
+    }
 }
-.home-banner .left-hide{
-     visibility: hidden;
-     animation:leftHide 2s ;
- }
-.home-banner .right-hide{
+
+.home-banner .left-hide {
     visibility: hidden;
-    animation:rightHide 2s ;
+    animation: leftHide 2s;
 }
+
+.home-banner .right-hide {
+    visibility: hidden;
+    animation: rightHide 2s;
+}
+
 @keyframes leftHide {
-    0%{visibility: visible;}
-    50%{transform: translateX(-40%) scale(.8) rotateY(30deg);}
-    100%{visibility: hidden;transform: translateZ(-200px);}
+    0% {
+        visibility: visible;
+    }
+    50% {
+        transform: translateX(-40%) scale(.8) rotateY(30deg);
+    }
+    100% {
+        visibility: hidden;
+        transform: translateZ(-200px);
+    }
 }
+
 @keyframes rightHide {
-    0%{visibility: visible;}
-    50%{transform: translateX(40%) scale(.8) rotateY(-30deg);}
-    100%{visibility: hidden;transform: translateZ(-200px);}
+    0% {
+        visibility: visible;
+    }
+    50% {
+        transform: translateX(40%) scale(.8) rotateY(-30deg);
+    }
+    100% {
+        visibility: hidden;
+        transform: translateZ(-200px);
+    }
 }
+
+.course-title {
+    margin: 50px;
+}
+
+.course-content {
+    width: 400px;
+    margin-left: 50px;
+
+}
+.course-lists{
+    position: absolute;
+    top: 70px;
+    right: 50px;
+    width: 480px;
+ }
+.course-lists li {
+    position: relative;
+    width: 120px;
+    height: 132px;
+    float: left;
+
+    transform-style: preserve-3d;
+}
+.course-lists li:hover .behind{
+    transform: rotateY(180deg);
+}
+.course-lists li:hover .front{
+    background-color: gold;
+    transform: rotateY(360deg);
+}
+.course-lists li div{
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-repeat:no-repeat;
+    background-position: center;
+    backface-visibility: hidden;
+    transition:transform 1s;
+ }
+.course-lists .behind{
+    background-image:url("../img/pcwelt.png");
+}
+.course-lists .front{
+    transform: rotateY(180deg);
+}
+/*
+照片墙尺寸:宽度480  定位偏移量为50(右) 70(上)
+照片墙元素尺寸:宽度120    高度132
+
++号背景尺寸: 宽度9  高度410  top:-5px
+
+                          文字面背景色:009ee0,周围间隙为15
+
+.line:nth-child(1){left: -6px;}
+.line:nth-child(2){left: 114px;}
+.line:nth-child(3){left: 234px;}
+.line:nth-child(4){left: 354px;}
+.line:nth-child(5){left: 474px;}*/

@@ -2,6 +2,7 @@
  * Created by Emontian on 2019/1/4.
  */
 window.addEventListener('DOMContentLoaded',function(){
+    //屏幕事件
     (function(){
         var headerLiNodes = document.querySelectorAll('#header .nav li');
         var arrow = document.querySelector('#header .arrow');
@@ -157,19 +158,21 @@ window.addEventListener('DOMContentLoaded',function(){
             homePointLis[nowIndex].className = 'active';
         }
         function bannerPlay(){
-            if (lastTime - nowTime > 2000){
+
                 nowIndex++;
+                nowTime = new Date().getTime();
                 if(nowIndex === homeBannerLis.length ) nowIndex = 0;
                 bannerInit();
                 homeBannerLis[nowIndex].className = 'title right-show';
                 homeBannerLis[lastIndex].className = 'title left-hide';
                 lastIndex = nowIndex;
                 lastTime = nowTime;
-            }
+
 
         }
 
     })();
+    //第二屏事件及函数
 
 
 });
