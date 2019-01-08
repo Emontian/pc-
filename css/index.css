@@ -355,16 +355,63 @@ img {
 .course-lists .front{
     transform: rotateY(180deg);
 }
-/*
-照片墙尺寸:宽度480  定位偏移量为50(右) 70(上)
-照片墙元素尺寸:宽度120    高度132
+.works-title{
+    margin: 50px 0 100px 50px;
+}
+.works-lists{
+    margin-left: 50px;
+}
+.works-lists li{
+    position: relative;
+    /*background-color: #009EE0;*/
+    width:220px;
+    height: 133px;
+    margin-right: 1px;
+    float: left;
+    overflow: hidden;
+}
+.works-lists li:last-child{
+    width: 332px;
+    margin-right:0;
+}
+.works-lists .works-mask{
+    position: absolute;
+    left:0;
+    top:0;
+    background-color:rgba(25,25,25,0.8) ;
+    color: white;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    transition: opacity 1s;
+}
+.works-mask span{
+    display: block;
+    margin: 10px;
+}
+.works-mask .ico{
+    width: 32px;
+    height:34px;
+    position: absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    margin: auto;
+    background-image: url("../img/zoomico.png");
+    background-repeat: no-repeat;
+    transition: background-position 1s;
+}
+.works-lists img{
+    transition:transform 1s;
 
-+号背景尺寸: 宽度9  高度410  top:-5px
-
-                          文字面背景色:009ee0,周围间隙为15
-
-.line:nth-child(1){left: -6px;}
-.line:nth-child(2){left: 114px;}
-.line:nth-child(3){left: 234px;}
-.line:nth-child(4){left: 354px;}
-.line:nth-child(5){left: 474px;}*/
+}
+.works-lists li:hover img{
+    transform: rotate(30deg) scale(1.5);
+}
+.works-lists li:hover .works-mask{
+    opacity: 1;
+}
+.works-lists li:hover .ico{
+    background-position:0 -35px;
+}
